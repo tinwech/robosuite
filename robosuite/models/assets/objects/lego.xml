@@ -1,0 +1,19 @@
+<mujoco>
+  <asset>
+    <mesh file="ycb/073-a_lego_duplo/google_64k/nontextured.stl" name="lego_mesh"/>
+    <texture file="ycb/073-a_lego_duplo/google_64k/texture_map.png" type="2d" name="tex-lego" />
+    <material name="lego" reflectance="0.7" texrepeat="15 15" texture="tex-lego" texuniform="true"/>
+    <material name="color" rgba="1 0 1 1"/>
+  </asset>
+  <worldbody>
+    <body>
+      <body name="object">
+        <geom pos="0 0 0" mesh="lego_mesh" material="color" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <!-- <geom pos="0 0 0" mesh="lego_mesh" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" friction="0.95 0.3 0.1"  material="lego" group="0" condim="4"/> -->
+      </body>
+      <site rgba="0 0 0 0" size="0.005" pos="0 0 -0.045" name="bottom_site"/>
+      <site rgba="0 0 0 0" size="0.005" pos="0 0 0.03" name="top_site"/>
+      <site rgba="0 0 0 0" size="0.005" pos="0.03 0.03 0" name="horizontal_radius_site"/>
+    </body>
+  </worldbody>
+</mujoco>

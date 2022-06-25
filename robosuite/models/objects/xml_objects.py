@@ -297,3 +297,43 @@ class DoorObject(MujocoXMLObject):
         dic = super().important_sites
         dic.update({"handle": self.naming_prefix + "handle"})
         return dic
+
+class SpoonObject(MujocoXMLObject):
+    def __init__(self, name):
+        super().__init__(xml_path_completion("objects/spoon.xml"),
+                         name=name, 
+                         joints=[dict(type="free", damping="0.0005")],
+                         obj_type="all", 
+                         duplicate_collision_geoms=True)
+
+class MugObject(MujocoXMLObject):
+    def __init__(self, name):
+        super().__init__(xml_path_completion("objects/mug.xml"),
+                         name=name, 
+                         joints=[dict(type="free", damping="0.0005")],
+                         obj_type="all", 
+                         duplicate_collision_geoms=True)
+
+class ForkObject(MujocoXMLObject):
+    def __init__(self, name):
+        super().__init__(xml_path_completion("objects/fork.xml"),
+                         name=name, 
+                         joints=[dict(type="free", damping="0.0005")],
+                         obj_type="all", 
+                         duplicate_collision_geoms=True)
+
+class BananaObject(MujocoXMLObject):
+    def __init__(self, name):
+        super().__init__(xml_path_completion("objects/banana.xml"),
+                         name=name, 
+                         joints=[dict(type="free", damping="0.0005")],
+                         obj_type="all", 
+                         duplicate_collision_geoms=True)
+
+class LegoObject(MujocoXMLObject):
+    def __init__(self, name):
+        super().__init__(xml_path_completion("objects/lego.xml"),
+                         name=name, 
+                         joints=[dict(type="free", damping="0.0005")],
+                         obj_type="all", 
+                         duplicate_collision_geoms=True)
