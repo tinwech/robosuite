@@ -11,6 +11,8 @@ from robosuite.utils.observables import Observable, sensor
 from robosuite.utils.placement_samplers import UniformRandomSampler
 from robosuite.utils.transform_utils import convert_quat
 
+from robosuite.models.objects.xml_objects import SpoonObject
+
 
 class Lift(SingleArmEnv):
     """
@@ -243,13 +245,16 @@ class Lift(SingleArmEnv):
 
             # reaching reward
             cube_pos = self.sim.data.body_xpos[self.cube_body_id]
+            spoon_pos = self.sim.data.body_xpos[self.spoon_body_id]
             gripper_site_pos = self.sim.data.site_xpos[self.robots[0].eef_site_id]
-            dist = np.linalg.norm(gripper_site_pos - cube_pos)
+            # dist = np.linalg.norm(gripper_site_pos - cube_pos)
+            dist = np.linalg.norm(gripper_site_pos - spoon_pos)
             reaching_reward = 1 - np.tanh(10.0 * dist)
             reward += reaching_reward
 
             # grasping reward
-            if self._check_grasp(gripper=self.robots[0].gripper, object_geoms=self.cube):
+            # if self._check_grasp(gripper=self.robots[0].gripper, object_geoms=self.cube):
+            if self._check_grasp(gripper=self.robots[0].gripper, object_geoms=self.spoon):
                 reward += 0.25
 
         # Scale reward if requested
@@ -301,15 +306,18 @@ class Lift(SingleArmEnv):
             rgba=[1, 0, 0, 1],
             material=redwood,
         )
+        self.spoon = SpoonObject('spoon')
 
         # Create placement initializer
         if self.placement_initializer is not None:
             self.placement_initializer.reset()
-            self.placement_initializer.add_objects(self.cube)
+            # self.placement_initializer.add_objects(self.cube)
+            self.placement_initializer.add_objects(self.spoon)
         else:
             self.placement_initializer = UniformRandomSampler(
                 name="ObjectSampler",
-                mujoco_objects=self.cube,
+                # mujoco_objects=self.cube,
+                mujoco_objects=self.spoon,
                 x_range=[-0.03, 0.03],
                 y_range=[-0.03, 0.03],
                 rotation=None,
@@ -323,7 +331,7 @@ class Lift(SingleArmEnv):
         self.model = ManipulationTask(
             mujoco_arena=mujoco_arena,
             mujoco_robots=[robot.robot_model for robot in self.robots],
-            mujoco_objects=self.cube,
+            mujoco_objects=[self.cube, self.spoon]
         )
 
     def _setup_references(self):
@@ -336,6 +344,7 @@ class Lift(SingleArmEnv):
 
         # Additional object references from this env
         self.cube_body_id = self.sim.model.body_name2id(self.cube.root_body)
+        self.spoon_body_id = self.sim.model.body_name2id(self.spoon.root_body)
 
     def _setup_observables(self):
         """
@@ -412,7 +421,8 @@ class Lift(SingleArmEnv):
 
         # Color the gripper visualization site according to its distance to the cube
         if vis_settings["grippers"]:
-            self._visualize_gripper_to_target(gripper=self.robots[0].gripper, target=self.cube)
+            # self._visualize_gripper_to_target(gripper=self.robots[0].gripper, target=self.cube)
+            self._visualize_gripper_to_target(gripper=self.robots[0].gripper, target=self.spoon)
 
     def _check_success(self):
         """
@@ -421,8 +431,11 @@ class Lift(SingleArmEnv):
         Returns:
             bool: True if cube has been lifted
         """
-        cube_height = self.sim.data.body_xpos[self.cube_body_id][2]
+        # cube_height = self.sim.data.body_xpos[self.cube_body_id][2]
+        spoon_height = self.sim.data.body_xpos[self.spoon_body_id][2]
+
         table_height = self.model.mujoco_arena.table_offset[2]
 
         # cube is higher than the table top above a margin
-        return cube_height > table_height + 0.04
+        # return cube_height > table_height + 0.04
+        return spoon_height > table_height + 0.04
