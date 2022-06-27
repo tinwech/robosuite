@@ -337,3 +337,19 @@ class LegoObject(MujocoXMLObject):
                          joints=[dict(type="free", damping="0.0005")],
                          obj_type="all", 
                          duplicate_collision_geoms=True)
+
+class PowerDrillObject(MujocoXMLObject):
+    def __init__(self, name):
+        super().__init__(xml_path_completion("objects/power-drill.xml"),
+                         name=name, 
+                         joints=[dict(type="free", damping="0.0005")],
+                         obj_type="all", 
+                         duplicate_collision_geoms=True)
+
+class SpatulaObject(MujocoXMLObject):
+    def __init__(self, name):
+        super().__init__(xml_path_completion("objects/spatula.xml"),
+                         name=name, 
+                         joints=[dict(type="free", damping="0.0005")],
+                         obj_type="all", 
+                         duplicate_collision_geoms=True)
