@@ -1,0 +1,17 @@
+<mujoco model="bar_with_two_hooks">
+  <asset>
+    <mesh file="meshes/hook_wall/bar_with_two_hooks/base.msh" name="bar_with_two_hooks_mesh" scale="0.8 0.8 0.8"/>
+    <texture file="meshes/hook_wall/bar_with_two_hooks/dark-wood.png" name="tex-bar_with_two_hooks" type="2d"/>
+    <material name="bar_with_two_hooks" reflectance="0.7" texrepeat="5 5" texture="tex-bar_with_two_hooks" texuniform="true"/>
+  </asset>
+  <worldbody>
+    <body>
+      <body name="object">
+        <geom pos="0 0 0" mesh="bar_with_two_hooks_mesh" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" friction="0.95 0.3 0.1" material="bar_with_two_hooks" group="0" condim="4"/>
+      </body>
+      <site rgba="0 0 0 0" size="0.005" pos="0 0 -0.045" name="bottom_site"/>
+      <site rgba="0 0 0 0" size="0.005" pos="0 0 0.03" name="top_site"/>
+      <site rgba="0 0 0 0" size="0.005" pos="0.03 0.03 0" name="horizontal_radius_site"/>
+    </body>
+  </worldbody>
+</mujoco>

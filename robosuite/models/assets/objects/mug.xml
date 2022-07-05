@@ -1,15 +1,142 @@
-<mujoco>
+<mujoco model="mug">
   <asset>
-    <mesh file="ycb/025_mug/google_64k/nontextured.stl" name="banana_mesh"/>
-    <texture file="ycb/025_mug/google_64k/texture_map.png" type="2d" name="tex-banana" />
-    <material name="banana" reflectance="0.7" texrepeat="15 15" texture="tex-banana" texuniform="true"/>
-    <material name="white" rgba="1 1 1 1"/>
+    <mesh file="my_objects/ycb_eval_data/hanging_eval/mug/textured/textured000.msh" name="mug_mesh000" scale="0.8 0.8 0.8"/>
+    <mesh file="my_objects/ycb_eval_data/hanging_eval/mug/textured/textured001.msh" name="mug_mesh001" scale="0.8 0.8 0.8"/>
+    <mesh file="my_objects/ycb_eval_data/hanging_eval/mug/textured/textured002.msh" name="mug_mesh002" scale="0.8 0.8 0.8"/>
+    <mesh file="my_objects/ycb_eval_data/hanging_eval/mug/textured/textured003.msh" name="mug_mesh003" scale="0.8 0.8 0.8"/>
+    <mesh file="my_objects/ycb_eval_data/hanging_eval/mug/textured/textured004.msh" name="mug_mesh004" scale="0.8 0.8 0.8"/>
+    <mesh file="my_objects/ycb_eval_data/hanging_eval/mug/textured/textured005.msh" name="mug_mesh005" scale="0.8 0.8 0.8"/>
+    <mesh file="my_objects/ycb_eval_data/hanging_eval/mug/textured/textured006.msh" name="mug_mesh006" scale="0.8 0.8 0.8"/>
+    <mesh file="my_objects/ycb_eval_data/hanging_eval/mug/textured/textured007.msh" name="mug_mesh007" scale="0.8 0.8 0.8"/>
+    <mesh file="my_objects/ycb_eval_data/hanging_eval/mug/textured/textured008.msh" name="mug_mesh008" scale="0.8 0.8 0.8"/>
+    <mesh file="my_objects/ycb_eval_data/hanging_eval/mug/textured/textured009.msh" name="mug_mesh009" scale="0.8 0.8 0.8"/>
+    <mesh file="my_objects/ycb_eval_data/hanging_eval/mug/textured/textured010.msh" name="mug_mesh010" scale="0.8 0.8 0.8"/>
+    <mesh file="my_objects/ycb_eval_data/hanging_eval/mug/textured/textured011.msh" name="mug_mesh011" scale="0.8 0.8 0.8"/>
+    <mesh file="my_objects/ycb_eval_data/hanging_eval/mug/textured/textured012.msh" name="mug_mesh012" scale="0.8 0.8 0.8"/>
+    <mesh file="my_objects/ycb_eval_data/hanging_eval/mug/textured/textured013.msh" name="mug_mesh013" scale="0.8 0.8 0.8"/>
+    <mesh file="my_objects/ycb_eval_data/hanging_eval/mug/textured/textured014.msh" name="mug_mesh014" scale="0.8 0.8 0.8"/>
+    <mesh file="my_objects/ycb_eval_data/hanging_eval/mug/textured/textured015.msh" name="mug_mesh015" scale="0.8 0.8 0.8"/>
+    <mesh file="my_objects/ycb_eval_data/hanging_eval/mug/textured/textured016.msh" name="mug_mesh016" scale="0.8 0.8 0.8"/>
+    <mesh file="my_objects/ycb_eval_data/hanging_eval/mug/textured/textured017.msh" name="mug_mesh017" scale="0.8 0.8 0.8"/>
+    <mesh file="my_objects/ycb_eval_data/hanging_eval/mug/textured/textured018.msh" name="mug_mesh018" scale="0.8 0.8 0.8"/>
+    <mesh file="my_objects/ycb_eval_data/hanging_eval/mug/textured/textured019.msh" name="mug_mesh019" scale="0.8 0.8 0.8"/>
+    <mesh file="my_objects/ycb_eval_data/hanging_eval/mug/textured/textured020.msh" name="mug_mesh020" scale="0.8 0.8 0.8"/>
+    <mesh file="my_objects/ycb_eval_data/hanging_eval/mug/textured/textured021.msh" name="mug_mesh021" scale="0.8 0.8 0.8"/>
+    <mesh file="my_objects/ycb_eval_data/hanging_eval/mug/textured/textured022.msh" name="mug_mesh022" scale="0.8 0.8 0.8"/>
+    <mesh file="my_objects/ycb_eval_data/hanging_eval/mug/textured/textured023.msh" name="mug_mesh023" scale="0.8 0.8 0.8"/>
+    <mesh file="my_objects/ycb_eval_data/hanging_eval/mug/textured/textured024.msh" name="mug_mesh024" scale="0.8 0.8 0.8"/>
+    <mesh file="my_objects/ycb_eval_data/hanging_eval/mug/textured/textured025.msh" name="mug_mesh025" scale="0.8 0.8 0.8"/>
+    <mesh file="my_objects/ycb_eval_data/hanging_eval/mug/textured/textured026.msh" name="mug_mesh026" scale="0.8 0.8 0.8"/>
+    <mesh file="my_objects/ycb_eval_data/hanging_eval/mug/textured/textured027.msh" name="mug_mesh027" scale="0.8 0.8 0.8"/>
+    <mesh file="my_objects/ycb_eval_data/hanging_eval/mug/textured/textured028.msh" name="mug_mesh028" scale="0.8 0.8 0.8"/>
+    <mesh file="my_objects/ycb_eval_data/hanging_eval/mug/textured/textured029.msh" name="mug_mesh029" scale="0.8 0.8 0.8"/>
+    <mesh file="my_objects/ycb_eval_data/hanging_eval/mug/textured/textured030.msh" name="mug_mesh030" scale="0.8 0.8 0.8"/>
+    <mesh file="my_objects/ycb_eval_data/hanging_eval/mug/textured/textured031.msh" name="mug_mesh031" scale="0.8 0.8 0.8"/>
+    <mesh file="my_objects/ycb_eval_data/hanging_eval/mug/textured/textured032.msh" name="mug_mesh032" scale="0.8 0.8 0.8"/>
+    <mesh file="my_objects/ycb_eval_data/hanging_eval/mug/textured/textured033.msh" name="mug_mesh033" scale="0.8 0.8 0.8"/>
+    <mesh file="my_objects/ycb_eval_data/hanging_eval/mug/textured/textured034.msh" name="mug_mesh034" scale="0.8 0.8 0.8"/>
+    <mesh file="my_objects/ycb_eval_data/hanging_eval/mug/textured/textured035.msh" name="mug_mesh035" scale="0.8 0.8 0.8"/>
+    <mesh file="my_objects/ycb_eval_data/hanging_eval/mug/textured/textured036.msh" name="mug_mesh036" scale="0.8 0.8 0.8"/>
+    <mesh file="my_objects/ycb_eval_data/hanging_eval/mug/textured/textured037.msh" name="mug_mesh037" scale="0.8 0.8 0.8"/>
+    <mesh file="my_objects/ycb_eval_data/hanging_eval/mug/textured/textured038.msh" name="mug_mesh038" scale="0.8 0.8 0.8"/>
+    <mesh file="my_objects/ycb_eval_data/hanging_eval/mug/textured/textured039.msh" name="mug_mesh039" scale="0.8 0.8 0.8"/>
+    <mesh file="my_objects/ycb_eval_data/hanging_eval/mug/textured/textured040.msh" name="mug_mesh040" scale="0.8 0.8 0.8"/>
+    <mesh file="my_objects/ycb_eval_data/hanging_eval/mug/textured/textured041.msh" name="mug_mesh041" scale="0.8 0.8 0.8"/>
+    <mesh file="my_objects/ycb_eval_data/hanging_eval/mug/textured/textured042.msh" name="mug_mesh042" scale="0.8 0.8 0.8"/>
+    <mesh file="my_objects/ycb_eval_data/hanging_eval/mug/textured/textured043.msh" name="mug_mesh043" scale="0.8 0.8 0.8"/>
+    <mesh file="my_objects/ycb_eval_data/hanging_eval/mug/textured/textured044.msh" name="mug_mesh044" scale="0.8 0.8 0.8"/>
+    <mesh file="my_objects/ycb_eval_data/hanging_eval/mug/textured/textured045.msh" name="mug_mesh045" scale="0.8 0.8 0.8"/>
+    <mesh file="my_objects/ycb_eval_data/hanging_eval/mug/textured/textured046.msh" name="mug_mesh046" scale="0.8 0.8 0.8"/>
+    <mesh file="my_objects/ycb_eval_data/hanging_eval/mug/textured/textured047.msh" name="mug_mesh047" scale="0.8 0.8 0.8"/>
+    <mesh file="my_objects/ycb_eval_data/hanging_eval/mug/textured/textured048.msh" name="mug_mesh048" scale="0.8 0.8 0.8"/>
+    <mesh file="my_objects/ycb_eval_data/hanging_eval/mug/textured/textured049.msh" name="mug_mesh049" scale="0.8 0.8 0.8"/>
+    <mesh file="my_objects/ycb_eval_data/hanging_eval/mug/textured/textured050.msh" name="mug_mesh050" scale="0.8 0.8 0.8"/>
+    <mesh file="my_objects/ycb_eval_data/hanging_eval/mug/textured/textured051.msh" name="mug_mesh051" scale="0.8 0.8 0.8"/>
+    <mesh file="my_objects/ycb_eval_data/hanging_eval/mug/textured/textured052.msh" name="mug_mesh052" scale="0.8 0.8 0.8"/>
+    <mesh file="my_objects/ycb_eval_data/hanging_eval/mug/textured/textured053.msh" name="mug_mesh053" scale="0.8 0.8 0.8"/>
+    <mesh file="my_objects/ycb_eval_data/hanging_eval/mug/textured/textured054.msh" name="mug_mesh054" scale="0.8 0.8 0.8"/>
+    <mesh file="my_objects/ycb_eval_data/hanging_eval/mug/textured/textured055.msh" name="mug_mesh055" scale="0.8 0.8 0.8"/>
+    <mesh file="my_objects/ycb_eval_data/hanging_eval/mug/textured/textured056.msh" name="mug_mesh056" scale="0.8 0.8 0.8"/>
+    <mesh file="my_objects/ycb_eval_data/hanging_eval/mug/textured/textured057.msh" name="mug_mesh057" scale="0.8 0.8 0.8"/>
+    <mesh file="my_objects/ycb_eval_data/hanging_eval/mug/textured/textured058.msh" name="mug_mesh058" scale="0.8 0.8 0.8"/>
+    <mesh file="my_objects/ycb_eval_data/hanging_eval/mug/textured/textured059.msh" name="mug_mesh059" scale="0.8 0.8 0.8"/>
+    <mesh file="my_objects/ycb_eval_data/hanging_eval/mug/textured/textured060.msh" name="mug_mesh060" scale="0.8 0.8 0.8"/>
+    <mesh file="my_objects/ycb_eval_data/hanging_eval/mug/textured/textured061.msh" name="mug_mesh061" scale="0.8 0.8 0.8"/>
+    <mesh file="my_objects/ycb_eval_data/hanging_eval/mug/textured/textured062.msh" name="mug_mesh062" scale="0.8 0.8 0.8"/>
+    <mesh file="my_objects/ycb_eval_data/hanging_eval/mug/textured/textured063.msh" name="mug_mesh063" scale="0.8 0.8 0.8"/>
+    <mesh file="my_objects/ycb_eval_data/hanging_eval/mug/textured.msh" name="mug_mesh" scale="0.8 0.8 0.8"/>
+    <texture file="my_objects/ycb_eval_data/hanging_eval/mug/texture_map.png" name="tex-mug" type="2d"/>
+    <material name="mug" reflectance="0.7" texrepeat="5 5" texture="tex-mug" texuniform="true"/>
+    <material name="none" rgba="1 1 1 0"/>
   </asset>
   <worldbody>
     <body>
       <body name="object">
-        <geom pos="0 0 0" mesh="banana_mesh" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" friction="0.95 0.3 0.1" group="0" condim="4"/>
-        <!--<geom pos="0 0 0" mesh="banana_mesh" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" friction="0.95 0.3 0.1"  material="banana" group="0" condim="4"/> -->
+        <geom pos="0 0 0" contype="0" conaffinity="0" group="1" mesh="mug_mesh" type="mesh" material="mug"/>
+        <geom pos="0 0 0" mesh="mug_mesh000" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0 0" mesh="mug_mesh001" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0 0" mesh="mug_mesh002" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0 0" mesh="mug_mesh003" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0 0" mesh="mug_mesh004" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0 0" mesh="mug_mesh005" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0 0" mesh="mug_mesh006" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0 0" mesh="mug_mesh007" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0 0" mesh="mug_mesh008" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0 0" mesh="mug_mesh009" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0 0" mesh="mug_mesh010" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0 0" mesh="mug_mesh011" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0 0" mesh="mug_mesh012" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0 0" mesh="mug_mesh013" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0 0" mesh="mug_mesh014" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0 0" mesh="mug_mesh015" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0 0" mesh="mug_mesh016" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0 0" mesh="mug_mesh017" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0 0" mesh="mug_mesh018" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0 0" mesh="mug_mesh019" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0 0" mesh="mug_mesh020" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0 0" mesh="mug_mesh021" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0 0" mesh="mug_mesh022" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0 0" mesh="mug_mesh023" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0 0" mesh="mug_mesh024" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0 0" mesh="mug_mesh025" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0 0" mesh="mug_mesh026" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0 0" mesh="mug_mesh027" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0 0" mesh="mug_mesh028" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0 0" mesh="mug_mesh029" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0 0" mesh="mug_mesh030" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0 0" mesh="mug_mesh031" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0 0" mesh="mug_mesh032" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0 0" mesh="mug_mesh033" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0 0" mesh="mug_mesh034" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0 0" mesh="mug_mesh035" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0 0" mesh="mug_mesh036" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0 0" mesh="mug_mesh037" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0 0" mesh="mug_mesh038" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0 0" mesh="mug_mesh039" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0 0" mesh="mug_mesh040" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0 0" mesh="mug_mesh041" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0 0" mesh="mug_mesh042" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0 0" mesh="mug_mesh043" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0 0" mesh="mug_mesh044" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0 0" mesh="mug_mesh045" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0 0" mesh="mug_mesh046" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0 0" mesh="mug_mesh047" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0 0" mesh="mug_mesh048" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0 0" mesh="mug_mesh049" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0 0" mesh="mug_mesh050" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0 0" mesh="mug_mesh051" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0 0" mesh="mug_mesh052" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0 0" mesh="mug_mesh053" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0 0" mesh="mug_mesh054" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0 0" mesh="mug_mesh055" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0 0" mesh="mug_mesh056" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0 0" mesh="mug_mesh057" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0 0" mesh="mug_mesh058" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0 0" mesh="mug_mesh059" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0 0" mesh="mug_mesh060" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0 0" mesh="mug_mesh061" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0 0" mesh="mug_mesh062" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0 0" mesh="mug_mesh063" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
       </body>
       <site rgba="0 0 0 0" size="0.005" pos="0 0 -0.045" name="bottom_site"/>
       <site rgba="0 0 0 0" size="0.005" pos="0 0 0.03" name="top_site"/>

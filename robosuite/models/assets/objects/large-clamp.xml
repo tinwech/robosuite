@@ -1,0 +1,17 @@
+<mujoco model="large-clamp">
+  <asset>
+    <mesh file="my_objects/ycb_eval_data/hanging_eval/large-clamp/textured.msh" name="large-clamp_mesh" scale="0.8 0.8 0.8"/>
+    <texture file="my_objects/ycb_eval_data/hanging_eval/large-clamp/texture_map.png" name="tex-large-clamp" type="2d"/>
+    <material name="large-clamp" reflectance="0.7" texrepeat="5 5" texture="tex-large-clamp" texuniform="true"/>
+  </asset>
+  <worldbody>
+    <body>
+      <body name="object">
+        <geom pos="0 0 0" mesh="large-clamp_mesh" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" friction="0.95 0.3 0.1" material="large-clamp" group="0" condim="4"/>
+      </body>
+      <site rgba="0 0 0 0" size="0.005" pos="0 0 -0.045" name="bottom_site"/>
+      <site rgba="0 0 0 0" size="0.005" pos="0 0 0.03" name="top_site"/>
+      <site rgba="0 0 0 0" size="0.005" pos="0.03 0.03 0" name="horizontal_radius_site"/>
+    </body>
+  </worldbody>
+</mujoco>
