@@ -2,16 +2,20 @@ from collections import OrderedDict
 
 import numpy as np
 
+
 from robosuite.environments.manipulation.single_arm_env import SingleArmEnv
 from robosuite.models.arenas import TableArena
+from robosuite.models.arenas import YCBArena
+
 from robosuite.models.objects import BoxObject
 from robosuite.models.tasks import ManipulationTask
 from robosuite.utils.mjcf_utils import CustomMaterial
 from robosuite.utils.observables import Observable, sensor
-from robosuite.utils.placement_samplers import UniformRandomSampler
+from robosuite.utils.placement_samplers import UniformRandomSampler, SequentialCompositeSampler
 from robosuite.utils.transform_utils import convert_quat
 
-from robosuite.models.objects.xml_objects import SpoonObject
+from robosuite.models.objects.xml_objects import PowerDrillObject, SpatulaObject, MyObject
+#from robosuite.models.objects.xml_objects import HandObject
 
 
 class Lift(SingleArmEnv):
@@ -180,7 +184,8 @@ class Lift(SingleArmEnv):
         self.use_object_obs = use_object_obs
 
         # object placement initializer
-        self.placement_initializer = placement_initializer
+        self.placement_initializer = None
+        # self.placement_initializer = placement_initializer
 
         super().__init__(
             robots=robots,
@@ -241,21 +246,18 @@ class Lift(SingleArmEnv):
             reward = 2.25
 
         # use a shaping reward
-        elif self.reward_shaping:
+        # elif self.reward_shaping:
 
             # reaching reward
-            cube_pos = self.sim.data.body_xpos[self.cube_body_id]
-            spoon_pos = self.sim.data.body_xpos[self.spoon_body_id]
-            gripper_site_pos = self.sim.data.site_xpos[self.robots[0].eef_site_id]
+            # cube_pos = self.sim.data.body_xpos[self.drill_body_id]
+            # gripper_site_pos = self.sim.data.site_xpos[self.robots[0].eef_site_id]
             # dist = np.linalg.norm(gripper_site_pos - cube_pos)
-            dist = np.linalg.norm(gripper_site_pos - spoon_pos)
-            reaching_reward = 1 - np.tanh(10.0 * dist)
-            reward += reaching_reward
+            # reaching_reward = 1 - np.tanh(10.0 * dist)
+            # reward += reaching_reward
 
             # grasping reward
-            # if self._check_grasp(gripper=self.robots[0].gripper, object_geoms=self.cube):
-            if self._check_grasp(gripper=self.robots[0].gripper, object_geoms=self.spoon):
-                reward += 0.25
+            # if self._check_grasp(gripper=self.robots[0].gripper, object_geoms=self.drill):
+            #     reward += 0.25
 
         # Scale reward if requested
         if self.reward_scale is not None:
@@ -274,14 +276,14 @@ class Lift(SingleArmEnv):
         self.robots[0].robot_model.set_base_xpos(xpos)
 
         # load model for table top workspace
-        mujoco_arena = TableArena(
-            table_full_size=self.table_full_size,
-            table_friction=self.table_friction,
-            table_offset=self.table_offset,
+        mujoco_arena = YCBArena(
+            #table_full_size=self.table_full_size,
+            #table_friction=self.table_friction,
+            #table_offset=self.table_offset,
         )
 
         # Arena always gets set to zero origin
-        mujoco_arena.set_origin([0, 0, 0])
+        #mujoco_arena.set_origin([0, 0, 0])
 
         # initialize objects of interest
         tex_attrib = {
@@ -299,39 +301,58 @@ class Lift(SingleArmEnv):
             tex_attrib=tex_attrib,
             mat_attrib=mat_attrib,
         )
-        self.cube = BoxObject(
-            name="cube",
-            size_min=[0.020, 0.020, 0.020],  # [0.015, 0.015, 0.015],
-            size_max=[0.022, 0.022, 0.022],  # [0.018, 0.018, 0.018])
-            rgba=[1, 0, 0, 1],
-            material=redwood,
-        )
-        self.spoon = SpoonObject('spoon')
+        # self.cube = BoxObject(
+        #     name="cube",
+        #     size_min=[0.020, 0.020, 0.020],  # [0.015, 0.015, 0.015],
+        #     size_max=[0.022, 0.022, 0.022],  # [0.018, 0.018, 0.018])
+        #     rgba=[1, 0, 0, 1],
+        #     material=redwood,
+        # )
 
-        # Create placement initializer
+        self.object_to_id = {"spatula": 0, "mug": 1, "windex-bottle": 2, "power-drill": 3, "hammer": 4}
+        self.obj_names = ["spatula", "mug", "windex-bottle", "power-drill", "hammer"]
+        self.obj_xmls = ["objects/spatula.xml", "objects/mug.xml", "objects/windex-bottle.xml", "objects/power-drill.xml", "objects/hammer.xml"]
+        self.objects = []
+        self.visual_objects = []
+        for vis_obj_cls, obj_xml, obj_name in zip(
+            [MyObject] * len(self.obj_names),
+            self.obj_xmls,
+            self.obj_names,
+        ):
+            vis_name = "Visual-" + obj_name
+            vis_obj = vis_obj_cls(xml=obj_xml, name=vis_name)
+            self.visual_objects.append(vis_obj)
+        for obj_cls, obj_xml, obj_name in zip(
+            [MyObject] * len(self.obj_names) ,
+            self.obj_xmls,
+            self.obj_names,
+        ):
+            obj = obj_cls(xml=obj_xml, name=obj_name)
+            self.objects.append(obj)
+
+        # Create placement initializers
         if self.placement_initializer is not None:
             self.placement_initializer.reset()
-            # self.placement_initializer.add_objects(self.cube)
-            self.placement_initializer.add_objects(self.spoon)
+            self.placement_initializer.add_objects(self.objects)
         else:
             self.placement_initializer = UniformRandomSampler(
                 name="ObjectSampler",
-                # mujoco_objects=self.cube,
-                mujoco_objects=self.spoon,
-                x_range=[-0.03, 0.03],
-                y_range=[-0.03, 0.03],
+                # mujoco_objects=[self.drill,self.spatula],
+                mujoco_objects=self.objects,
+                x_range=[-0.2, 0.2],
+                y_range=[-0.4, 0.4],
                 rotation=None,
                 ensure_object_boundary_in_range=False,
                 ensure_valid_placement=True,
                 reference_pos=self.table_offset,
-                z_offset=0.01,
+                z_offset=0.0,
             )
 
         # task includes arena, robot, and objects of interest
         self.model = ManipulationTask(
             mujoco_arena=mujoco_arena,
             mujoco_robots=[robot.robot_model for robot in self.robots],
-            mujoco_objects=[self.cube, self.spoon]
+            mujoco_objects=self.objects,
         )
 
     def _setup_references(self):
@@ -343,8 +364,9 @@ class Lift(SingleArmEnv):
         super()._setup_references()
 
         # Additional object references from this env
-        self.cube_body_id = self.sim.model.body_name2id(self.cube.root_body)
-        self.spoon_body_id = self.sim.model.body_name2id(self.spoon.root_body)
+        # self.drill_body_id = self.sim.model.body_name2id(self.drill.root_body)
+        # self.spatula_body_id = self.sim.model.body_name2id(self.spatula.root_body)
+
 
     def _setup_observables(self):
         """
@@ -355,39 +377,39 @@ class Lift(SingleArmEnv):
         """
         observables = super()._setup_observables()
 
-        # low-level object information
-        if self.use_object_obs:
-            # Get robot prefix and define observables modality
-            pf = self.robots[0].robot_model.naming_prefix
-            modality = "object"
+        # # low-level object information
+        # if self.use_object_obs:
+        #     # Get robot prefix and define observables modality
+        #     pf = self.robots[0].robot_model.naming_prefix
+        #     modality = "object"
 
-            # cube-related observables
-            @sensor(modality=modality)
-            def cube_pos(obs_cache):
-                return np.array(self.sim.data.body_xpos[self.cube_body_id])
+        #     # cube-related observables
+        #     @sensor(modality=modality)
+        #     def cube_pos(obs_cache):
+        #         return np.array(self.sim.data.body_xpos[self.drill_body_id])
 
-            @sensor(modality=modality)
-            def cube_quat(obs_cache):
-                return convert_quat(np.array(self.sim.data.body_xquat[self.cube_body_id]), to="xyzw")
+        #     @sensor(modality=modality)
+        #     def cube_quat(obs_cache):
+        #         return convert_quat(np.array(self.sim.data.body_xquat[self.drill_body_id]), to="xyzw")
 
-            @sensor(modality=modality)
-            def gripper_to_cube_pos(obs_cache):
-                return (
-                    obs_cache[f"{pf}eef_pos"] - obs_cache["cube_pos"]
-                    if f"{pf}eef_pos" in obs_cache and "cube_pos" in obs_cache
-                    else np.zeros(3)
-                )
+        #     @sensor(modality=modality)
+        #     def gripper_to_cube_pos(obs_cache):
+        #         return (
+        #             obs_cache[f"{pf}eef_pos"] - obs_cache["cube_pos"]
+        #             if f"{pf}eef_pos" in obs_cache and "cube_pos" in obs_cache
+        #             else np.zeros(3)
+        #         )
 
-            sensors = [cube_pos, cube_quat, gripper_to_cube_pos]
-            names = [s.__name__ for s in sensors]
+        #     sensors = [cube_pos, cube_quat, gripper_to_cube_pos]
+        #     names = [s.__name__ for s in sensors]
 
-            # Create observables
-            for name, s in zip(names, sensors):
-                observables[name] = Observable(
-                    name=name,
-                    sensor=s,
-                    sampling_rate=self.control_freq,
-                )
+        #     # Create observables
+        #     for name, s in zip(names, sensors):
+        #         observables[name] = Observable(
+        #             name=name,
+        #             sensor=s,
+        #             sampling_rate=self.control_freq,
+        #         )
 
         return observables
 
@@ -420,9 +442,8 @@ class Lift(SingleArmEnv):
         super().visualize(vis_settings=vis_settings)
 
         # Color the gripper visualization site according to its distance to the cube
-        if vis_settings["grippers"]:
-            # self._visualize_gripper_to_target(gripper=self.robots[0].gripper, target=self.cube)
-            self._visualize_gripper_to_target(gripper=self.robots[0].gripper, target=self.spoon)
+        # if vis_settings["grippers"]:
+        #     self._visualize_gripper_to_target(gripper=self.robots[0].gripper, target=self.drill)
 
     def _check_success(self):
         """
@@ -431,11 +452,9 @@ class Lift(SingleArmEnv):
         Returns:
             bool: True if cube has been lifted
         """
-        # cube_height = self.sim.data.body_xpos[self.cube_body_id][2]
-        spoon_height = self.sim.data.body_xpos[self.spoon_body_id][2]
-
+        # cube_height = self.sim.data.body_xpos[self.drill_body_id][2]
         table_height = self.model.mujoco_arena.table_offset[2]
 
         # cube is higher than the table top above a margin
-        # return cube_height > table_height + 0.04
-        return spoon_height > table_height + 0.04
+        return False
+        return cube_height > table_height + 0.04
