@@ -1,0 +1,327 @@
+<mujoco model="ycb_arena">
+  <asset>
+
+    <!-- hook mesh -->
+    <mesh file="../objects/meshes/hook_wall/bar_with_two_hooks/base.msh" name="bar_with_two_hooks_mesh" scale="0.3 0.25 0.3"/>
+    <texture file="../objects/meshes/hook_wall/bar_with_two_hooks/dark-wood.png" name="tex-bar_with_two_hooks" type="2d"/>
+    <material name="bar_with_two_hooks" reflectance="0.7" texrepeat="5 5" texture="tex-bar_with_two_hooks" texuniform="true"/>
+    <!-- bar mesh -->
+    <mesh file="../objects/meshes/hook_wall/two_bars/base.msh" name="two_bars_mesh" scale="0.15 0.15 0.15"/>
+    <texture file="../objects/meshes/hook_wall/two_bars/dark-wood.png" name="tex-two_bars" type="2d"/>
+    <material name="two_bars" reflectance="0.7" texrepeat="5 5" texture="tex-two_bars" texuniform="true"/>
+
+    <!-- ceramic table texture and material-->
+    <texture builtin="gradient" height="256" rgb1=".9 .9 1." rgb2=".2 .3 .4" type="skybox" width="256"/>
+    <texture file="../textures/wood-tiles.png" type="2d" name="texplane"/>
+    <material name="floorplane" reflectance="0.01" shininess="0.0" specular="0.0" texrepeat="2 2" texture="texplane" texuniform="true"/>
+    <!-- ceramic table texture and material-->
+    <texture file="../textures/ceramic.png" type="cube" name="tex-ceramic"/>
+    <material name="table_ceramic" reflectance="0.0" shininess="0.0" specular="0.2" texrepeat="1 1" texture="tex-ceramic" />
+    <!-- steel legs -->
+    <texture file="../textures/steel-brushed.png" type="cube" name="tex-steel-brushed"/>
+    <material name="table_legs_metal" reflectance="0.8" shininess="0.8" texrepeat="1 1" texture="tex-steel-brushed" />
+    <!-- plaster walls -->
+    <texture file="../textures/cream-plaster.png" type="2d" name="tex-cream-plaster"/>
+    <material name="walls_mat" reflectance="0.0" shininess="0.1" specular="0.1" texrepeat="3 3" texture="tex-cream-plaster" texuniform="true" />
+    <!-- added table texture and material for domain randomization -->
+    <texture  name="textable" builtin="flat" height="512" width="512" rgb1="0.5 0.5 0.5" rgb2="0.5 0.5 0.5"/>
+    <material name="table_mat" texture="textable" />
+
+    <!-- hook collision mesh-->
+    <mesh file="../objects/meshes/hook_wall/bar_with_two_hooks/composite/object000.msh" name="bar_with_two_hooks_mesh000" scale="0.3 0.25 0.3"/>
+    <mesh file="../objects/meshes/hook_wall/bar_with_two_hooks/composite/object001.msh" name="bar_with_two_hooks_mesh001" scale="0.3 0.25 0.3"/>
+    <mesh file="../objects/meshes/hook_wall/bar_with_two_hooks/composite/object002.msh" name="bar_with_two_hooks_mesh002" scale="0.3 0.25 0.3"/>
+    <mesh file="../objects/meshes/hook_wall/bar_with_two_hooks/composite/object003.msh" name="bar_with_two_hooks_mesh003" scale="0.3 0.25 0.3"/>
+    <mesh file="../objects/meshes/hook_wall/bar_with_two_hooks/composite/object004.msh" name="bar_with_two_hooks_mesh004" scale="0.3 0.25 0.3"/>
+    <mesh file="../objects/meshes/hook_wall/bar_with_two_hooks/composite/object005.msh" name="bar_with_two_hooks_mesh005" scale="0.3 0.25 0.3"/>
+    <mesh file="../objects/meshes/hook_wall/bar_with_two_hooks/composite/object006.msh" name="bar_with_two_hooks_mesh006" scale="0.3 0.25 0.3"/>
+    <mesh file="../objects/meshes/hook_wall/bar_with_two_hooks/composite/object007.msh" name="bar_with_two_hooks_mesh007" scale="0.3 0.25 0.3"/>
+    <mesh file="../objects/meshes/hook_wall/bar_with_two_hooks/composite/object008.msh" name="bar_with_two_hooks_mesh008" scale="0.3 0.25 0.3"/>
+    <mesh file="../objects/meshes/hook_wall/bar_with_two_hooks/composite/object009.msh" name="bar_with_two_hooks_mesh009" scale="0.3 0.25 0.3"/>
+    <mesh file="../objects/meshes/hook_wall/bar_with_two_hooks/composite/object010.msh" name="bar_with_two_hooks_mesh010" scale="0.3 0.25 0.3"/>
+    <mesh file="../objects/meshes/hook_wall/bar_with_two_hooks/composite/object011.msh" name="bar_with_two_hooks_mesh011" scale="0.3 0.25 0.3"/>
+    <mesh file="../objects/meshes/hook_wall/bar_with_two_hooks/composite/object012.msh" name="bar_with_two_hooks_mesh012" scale="0.3 0.25 0.3"/>
+    <mesh file="../objects/meshes/hook_wall/bar_with_two_hooks/composite/object013.msh" name="bar_with_two_hooks_mesh013" scale="0.3 0.25 0.3"/>
+    <mesh file="../objects/meshes/hook_wall/bar_with_two_hooks/composite/object014.msh" name="bar_with_two_hooks_mesh014" scale="0.3 0.25 0.3"/>
+    <mesh file="../objects/meshes/hook_wall/bar_with_two_hooks/composite/object015.msh" name="bar_with_two_hooks_mesh015" scale="0.3 0.25 0.3"/>
+    <mesh file="../objects/meshes/hook_wall/bar_with_two_hooks/composite/object016.msh" name="bar_with_two_hooks_mesh016" scale="0.3 0.25 0.3"/>
+    <mesh file="../objects/meshes/hook_wall/bar_with_two_hooks/composite/object017.msh" name="bar_with_two_hooks_mesh017" scale="0.3 0.25 0.3"/>
+    <mesh file="../objects/meshes/hook_wall/bar_with_two_hooks/composite/object018.msh" name="bar_with_two_hooks_mesh018" scale="0.3 0.25 0.3"/>
+    <mesh file="../objects/meshes/hook_wall/bar_with_two_hooks/composite/object019.msh" name="bar_with_two_hooks_mesh019" scale="0.3 0.25 0.3"/>
+    <mesh file="../objects/meshes/hook_wall/bar_with_two_hooks/composite/object020.msh" name="bar_with_two_hooks_mesh020" scale="0.3 0.25 0.3"/>
+    <mesh file="../objects/meshes/hook_wall/bar_with_two_hooks/composite/object021.msh" name="bar_with_two_hooks_mesh021" scale="0.3 0.25 0.3"/>
+    <mesh file="../objects/meshes/hook_wall/bar_with_two_hooks/composite/object022.msh" name="bar_with_two_hooks_mesh022" scale="0.3 0.25 0.3"/>
+    <mesh file="../objects/meshes/hook_wall/bar_with_two_hooks/composite/object023.msh" name="bar_with_two_hooks_mesh023" scale="0.3 0.25 0.3"/>
+    <mesh file="../objects/meshes/hook_wall/bar_with_two_hooks/composite/object024.msh" name="bar_with_two_hooks_mesh024" scale="0.3 0.25 0.3"/>
+    <mesh file="../objects/meshes/hook_wall/bar_with_two_hooks/composite/object025.msh" name="bar_with_two_hooks_mesh025" scale="0.3 0.25 0.3"/>
+    <mesh file="../objects/meshes/hook_wall/bar_with_two_hooks/composite/object026.msh" name="bar_with_two_hooks_mesh026" scale="0.3 0.25 0.3"/>
+    <mesh file="../objects/meshes/hook_wall/bar_with_two_hooks/composite/object027.msh" name="bar_with_two_hooks_mesh027" scale="0.3 0.25 0.3"/>
+    <mesh file="../objects/meshes/hook_wall/bar_with_two_hooks/composite/object028.msh" name="bar_with_two_hooks_mesh028" scale="0.3 0.25 0.3"/>
+    <mesh file="../objects/meshes/hook_wall/bar_with_two_hooks/composite/object029.msh" name="bar_with_two_hooks_mesh029" scale="0.3 0.25 0.3"/>
+    <mesh file="../objects/meshes/hook_wall/bar_with_two_hooks/composite/object030.msh" name="bar_with_two_hooks_mesh030" scale="0.3 0.25 0.3"/>
+    <mesh file="../objects/meshes/hook_wall/bar_with_two_hooks/composite/object031.msh" name="bar_with_two_hooks_mesh031" scale="0.3 0.25 0.3"/>
+    <mesh file="../objects/meshes/hook_wall/bar_with_two_hooks/composite/object032.msh" name="bar_with_two_hooks_mesh032" scale="0.3 0.25 0.3"/>
+    <mesh file="../objects/meshes/hook_wall/bar_with_two_hooks/composite/object033.msh" name="bar_with_two_hooks_mesh033" scale="0.3 0.25 0.3"/>
+    <!-- <mesh file="../objects/meshes/hook_wall/bar_with_two_hooks/composite/object034.msh" name="bar_with_two_hooks_mesh034" scale="0.3 0.25 0.3"/> -->
+    <mesh file="../objects/meshes/hook_wall/bar_with_two_hooks/composite/object035.msh" name="bar_with_two_hooks_mesh035" scale="0.3 0.25 0.3"/>
+    <mesh file="../objects/meshes/hook_wall/bar_with_two_hooks/composite/object036.msh" name="bar_with_two_hooks_mesh036" scale="0.3 0.25 0.3"/>
+    <mesh file="../objects/meshes/hook_wall/bar_with_two_hooks/composite/object037.msh" name="bar_with_two_hooks_mesh037" scale="0.3 0.25 0.3"/>
+    <mesh file="../objects/meshes/hook_wall/bar_with_two_hooks/composite/object038.msh" name="bar_with_two_hooks_mesh038" scale="0.3 0.25 0.3"/>
+    <mesh file="../objects/meshes/hook_wall/bar_with_two_hooks/composite/object039.msh" name="bar_with_two_hooks_mesh039" scale="0.3 0.25 0.3"/>
+    <mesh file="../objects/meshes/hook_wall/bar_with_two_hooks/composite/object040.msh" name="bar_with_two_hooks_mesh040" scale="0.3 0.25 0.3"/>
+    <mesh file="../objects/meshes/hook_wall/bar_with_two_hooks/composite/object041.msh" name="bar_with_two_hooks_mesh041" scale="0.3 0.25 0.3"/>
+    <!-- <mesh file="../objects/meshes/hook_wall/bar_with_two_hooks/composite/object042.msh" name="bar_with_two_hooks_mesh042" scale="0.3 0.25 0.3"/> -->
+
+    <!-- bar collision mesh-->
+    <mesh file="../objects/meshes/hook_wall/two_bars/composite/object000.msh" name="two_bars_mesh000" scale="0.15 0.15 0.15"/>
+    <mesh file="../objects/meshes/hook_wall/two_bars/composite/object001.msh" name="two_bars_mesh001" scale="0.15 0.15 0.15"/>
+    <mesh file="../objects/meshes/hook_wall/two_bars/composite/object002.msh" name="two_bars_mesh002" scale="0.15 0.15 0.15"/>
+    <mesh file="../objects/meshes/hook_wall/two_bars/composite/object003.msh" name="two_bars_mesh003" scale="0.15 0.15 0.15"/>
+    <mesh file="../objects/meshes/hook_wall/two_bars/composite/object004.msh" name="two_bars_mesh004" scale="0.15 0.15 0.15"/>
+    <mesh file="../objects/meshes/hook_wall/two_bars/composite/object005.msh" name="two_bars_mesh005" scale="0.15 0.15 0.15"/>
+    <mesh file="../objects/meshes/hook_wall/two_bars/composite/object006.msh" name="two_bars_mesh006" scale="0.15 0.15 0.15"/>
+    <mesh file="../objects/meshes/hook_wall/two_bars/composite/object007.msh" name="two_bars_mesh007" scale="0.15 0.15 0.15"/>
+    <mesh file="../objects/meshes/hook_wall/two_bars/composite/object008.msh" name="two_bars_mesh008" scale="0.15 0.15 0.15"/>
+    <mesh file="../objects/meshes/hook_wall/two_bars/composite/object009.msh" name="two_bars_mesh009" scale="0.15 0.15 0.15"/>
+    <mesh file="../objects/meshes/hook_wall/two_bars/composite/object010.msh" name="two_bars_mesh010" scale="0.15 0.15 0.15"/>
+    <mesh file="../objects/meshes/hook_wall/two_bars/composite/object011.msh" name="two_bars_mesh011" scale="0.15 0.15 0.15"/>
+    <mesh file="../objects/meshes/hook_wall/two_bars/composite/object012.msh" name="two_bars_mesh012" scale="0.15 0.15 0.15"/>
+    <mesh file="../objects/meshes/hook_wall/two_bars/composite/object013.msh" name="two_bars_mesh013" scale="0.15 0.15 0.15"/>
+    <mesh file="../objects/meshes/hook_wall/two_bars/composite/object014.msh" name="two_bars_mesh014" scale="0.15 0.15 0.15"/>
+    <mesh file="../objects/meshes/hook_wall/two_bars/composite/object015.msh" name="two_bars_mesh015" scale="0.15 0.15 0.15"/>
+    <mesh file="../objects/meshes/hook_wall/two_bars/composite/object016.msh" name="two_bars_mesh016" scale="0.15 0.15 0.15"/>
+    <mesh file="../objects/meshes/hook_wall/two_bars/composite/object017.msh" name="two_bars_mesh017" scale="0.15 0.15 0.15"/>
+    <mesh file="../objects/meshes/hook_wall/two_bars/composite/object018.msh" name="two_bars_mesh018" scale="0.15 0.15 0.15"/>
+    <mesh file="../objects/meshes/hook_wall/two_bars/composite/object019.msh" name="two_bars_mesh019" scale="0.15 0.15 0.15"/>
+    <mesh file="../objects/meshes/hook_wall/two_bars/composite/object020.msh" name="two_bars_mesh020" scale="0.15 0.15 0.15"/>
+    <mesh file="../objects/meshes/hook_wall/two_bars/composite/object021.msh" name="two_bars_mesh021" scale="0.15 0.15 0.15"/>
+    <mesh file="../objects/meshes/hook_wall/two_bars/composite/object022.msh" name="two_bars_mesh022" scale="0.15 0.15 0.15"/>
+    <mesh file="../objects/meshes/hook_wall/two_bars/composite/object023.msh" name="two_bars_mesh023" scale="0.15 0.15 0.15"/>
+    <mesh file="../objects/meshes/hook_wall/two_bars/composite/object024.msh" name="two_bars_mesh024" scale="0.15 0.15 0.15"/>
+    <mesh file="../objects/meshes/hook_wall/two_bars/composite/object025.msh" name="two_bars_mesh025" scale="0.15 0.15 0.15"/>
+    <mesh file="../objects/meshes/hook_wall/two_bars/composite/object026.msh" name="two_bars_mesh026" scale="0.15 0.15 0.15"/>
+    <mesh file="../objects/meshes/hook_wall/two_bars/composite/object027.msh" name="two_bars_mesh027" scale="0.15 0.15 0.15"/>
+    <mesh file="../objects/meshes/hook_wall/two_bars/composite/object028.msh" name="two_bars_mesh028" scale="0.15 0.15 0.15"/>
+    <mesh file="../objects/meshes/hook_wall/two_bars/composite/object029.msh" name="two_bars_mesh029" scale="0.15 0.15 0.15"/>
+    <mesh file="../objects/meshes/hook_wall/two_bars/composite/object030.msh" name="two_bars_mesh030" scale="0.15 0.15 0.15"/>
+    <mesh file="../objects/meshes/hook_wall/two_bars/composite/object031.msh" name="two_bars_mesh031" scale="0.15 0.15 0.15"/>
+    <mesh file="../objects/meshes/hook_wall/two_bars/composite/object032.msh" name="two_bars_mesh032" scale="0.15 0.15 0.15"/>
+    <mesh file="../objects/meshes/hook_wall/two_bars/composite/object033.msh" name="two_bars_mesh033" scale="0.15 0.15 0.15"/>
+    <mesh file="../objects/meshes/hook_wall/two_bars/composite/object034.msh" name="two_bars_mesh034" scale="0.15 0.15 0.15"/>
+    <mesh file="../objects/meshes/hook_wall/two_bars/composite/object035.msh" name="two_bars_mesh035" scale="0.15 0.15 0.15"/>
+    <mesh file="../objects/meshes/hook_wall/two_bars/composite/object036.msh" name="two_bars_mesh036" scale="0.15 0.15 0.15"/>
+    <mesh file="../objects/meshes/hook_wall/two_bars/composite/object037.msh" name="two_bars_mesh037" scale="0.15 0.15 0.15"/>
+    <mesh file="../objects/meshes/hook_wall/two_bars/composite/object038.msh" name="two_bars_mesh038" scale="0.15 0.15 0.15"/>
+    <mesh file="../objects/meshes/hook_wall/two_bars/composite/object039.msh" name="two_bars_mesh039" scale="0.15 0.15 0.15"/>
+    <mesh file="../objects/meshes/hook_wall/two_bars/composite/object040.msh" name="two_bars_mesh040" scale="0.15 0.15 0.15"/>
+    <mesh file="../objects/meshes/hook_wall/two_bars/composite/object041.msh" name="two_bars_mesh041" scale="0.15 0.15 0.15"/>
+    <mesh file="../objects/meshes/hook_wall/two_bars/composite/object042.msh" name="two_bars_mesh042" scale="0.15 0.15 0.15"/>
+    <mesh file="../objects/meshes/hook_wall/two_bars/composite/object043.msh" name="two_bars_mesh043" scale="0.15 0.15 0.15"/>
+    <mesh file="../objects/meshes/hook_wall/two_bars/composite/object044.msh" name="two_bars_mesh044" scale="0.15 0.15 0.15"/>
+    <mesh file="../objects/meshes/hook_wall/two_bars/composite/object045.msh" name="two_bars_mesh045" scale="0.15 0.15 0.15"/>
+    <mesh file="../objects/meshes/hook_wall/two_bars/composite/object046.msh" name="two_bars_mesh046" scale="0.15 0.15 0.15"/>
+    <mesh file="../objects/meshes/hook_wall/two_bars/composite/object047.msh" name="two_bars_mesh047" scale="0.15 0.15 0.15"/>
+    <mesh file="../objects/meshes/hook_wall/two_bars/composite/object048.msh" name="two_bars_mesh048" scale="0.15 0.15 0.15"/>
+    <mesh file="../objects/meshes/hook_wall/two_bars/composite/object049.msh" name="two_bars_mesh049" scale="0.15 0.15 0.15"/>
+    <!-- <mesh file="../objects/meshes/hook_wall/two_bars/composite/object050.msh" name="two_bars_mesh050" scale="0.15 0.15 0.15"/> -->
+    <mesh file="../objects/meshes/hook_wall/two_bars/composite/object051.msh" name="two_bars_mesh051" scale="0.15 0.15 0.15"/>
+    <mesh file="../objects/meshes/hook_wall/two_bars/composite/object052.msh" name="two_bars_mesh052" scale="0.15 0.15 0.15"/>
+    <mesh file="../objects/meshes/hook_wall/two_bars/composite/object053.msh" name="two_bars_mesh053" scale="0.15 0.15 0.15"/>
+    <mesh file="../objects/meshes/hook_wall/two_bars/composite/object054.msh" name="two_bars_mesh054" scale="0.15 0.15 0.15"/>
+    <mesh file="../objects/meshes/hook_wall/two_bars/composite/object055.msh" name="two_bars_mesh055" scale="0.15 0.15 0.15"/>
+    <mesh file="../objects/meshes/hook_wall/two_bars/composite/object056.msh" name="two_bars_mesh056" scale="0.15 0.15 0.15"/>
+    <mesh file="../objects/meshes/hook_wall/two_bars/composite/object057.msh" name="two_bars_mesh057" scale="0.15 0.15 0.15"/>
+    <mesh file="../objects/meshes/hook_wall/two_bars/composite/object058.msh" name="two_bars_mesh058" scale="0.15 0.15 0.15"/>
+    <mesh file="../objects/meshes/hook_wall/two_bars/composite/object059.msh" name="two_bars_mesh059" scale="0.15 0.15 0.15"/>
+    <mesh file="../objects/meshes/hook_wall/two_bars/composite/object060.msh" name="two_bars_mesh060" scale="0.15 0.15 0.15"/>
+    <mesh file="../objects/meshes/hook_wall/two_bars/composite/object061.msh" name="two_bars_mesh061" scale="0.15 0.15 0.15"/>
+    <!-- <mesh file="../objects/meshes/hook_wall/two_bars/composite/object062.msh" name="two_bars_mesh062" scale="0.15 0.15 0.15"/> -->
+    <!-- <mesh file="../objects/meshes/hook_wall/two_bars/composite/object063.msh" name="two_bars_mesh063" scale="0.15 0.15 0.15"/> -->
+    <material name="none" rgba="1 1 1 1"/>
+  </asset>
+  <worldbody>
+    <!-- Floor -->
+    <geom condim="3" material="floorplane" name="floor" pos="0 0 0" size="3 3 .125" type="plane"/>
+    <!-- Walls (visual only) -->
+    <!-- <geom pos="-1.25 2.25 1.5" quat="0.6532815 0.6532815 0.2705981 0.2705981" size="1.06 1.5 0.01" type="box" conaffinity="0" contype="0" group="1" name="wall_leftcorner_visual" material="walls_mat"/>
+    <geom pos="-1.25 -2.25 1.5" quat="0.6532815 0.6532815 -0.2705981 -0.2705981" size="1.06 1.5 0.01" type="box" conaffinity="0" contype="0" group="1" name="wall_rightcorner_visual" material="walls_mat"/>
+    <geom pos="1.25 3 1.5" quat="0.7071 0.7071 0 0" size="1.75 1.5 0.01" type="box" conaffinity="0" contype="0" group="1" name="wall_left_visual" material="walls_mat"/>
+    <geom pos="1.25 -3 1.5" quat="0.7071 -0.7071 0 0" size="1.75 1.5 0.01" type="box" conaffinity="0" contype="0" group="1" name="wall_right_visual" material="walls_mat"/>
+    <geom pos="-2 0 1.5" quat="0.5 0.5 0.5 0.5" size="1.5 1.5 0.01" type="box" conaffinity="0" contype="0" group="1" name="wall_rear_visual" material="walls_mat"/>
+    <geom pos="3 0 1.5" quat="0.5 0.5 -0.5 -0.5" size="3 1.5 0.01" type="box" conaffinity="0" contype="0" group="1" name="wall_front_visual" material="walls_mat"/> -->
+    <!-- Table body -->
+    <body name="table" pos="0 0 0.8">
+      <geom pos="0 0 0" size="0.45 0.9 0.015" type="box" group="0" name="table_collision" friction="1 0.005 0.0001"/>
+      <geom pos="0 0 0" size="0.45 0.9 0.015" type="box" conaffinity="0" contype="0" group="1" name="table_visual" material="table_ceramic"/>
+      <site pos="0 0 0.025" name="table_top" size="0.001 0.001 0.001" rgba="0 0 0 0"/>
+      <!-- beams (visual only) -->
+      <geom pos=" 0.315  0.735 0.465 " size="0.015 0.015 0.45 " type="box" conaffinity="0" contype="0" group="1" name="table_beam1_visual" material="table_legs_metal"/>
+      <geom pos=" 0.315 -0.735 0.465 " size="0.015 0.015 0.45 " type="box" conaffinity="0" contype="0" group="1" name="table_beam2_visual" material="table_legs_metal"/>
+      <geom pos="-0.315 -0.735 0.465 " size="0.015 0.015 0.45 " type="box" conaffinity="0" contype="0" group="1" name="table_beam3_visual" material="table_legs_metal"/>
+      <geom pos="-0.315  0.735 0.465 " size="0.015 0.015 0.45 " type="box" conaffinity="0" contype="0" group="1" name="table_beam4_visual" material="table_legs_metal"/>
+      <geom pos=" 0.315  0.000 0.93" size="0.015 0.75  0.015" type="box" conaffinity="0" contype="0" group="1" name="table_beam5_visual" material="table_legs_metal"/>
+      <geom pos="-0.315  0.000 0.93" size="0.015 0.75  0.015" type="box" conaffinity="0" contype="0" group="1" name="table_beam6_visual" material="table_legs_metal"/>
+      <geom pos=" 0.000 -0.735 0.93" size="0.3   0.015 0.015" type="box" conaffinity="0" contype="0" group="1" name="table_beam7_visual" material="table_legs_metal"/>
+      <geom pos=" 0.000  0.735 0.93" size="0.3   0.015 0.015" type="box" conaffinity="0" contype="0" group="1" name="table_beam8_visual" material="table_legs_metal"/>
+      <geom pos=" 0.000  0.000 0.93" size="0.3   0.015 0.015" type="box" conaffinity="0" contype="0" group="1" name="table_beam9_visual" material="table_legs_metal"/>
+      <!-- Legs (visual only) -->
+      <geom pos=" 0.4  0.85 -0.4 " size="0.025 0.4" type="cylinder" conaffinity="0" contype="0" group="1" name="table_leg1_visual" material="table_legs_metal"/>
+      <geom pos=" 0.4 -0.85 -0.4 " size="0.025 0.4" type="cylinder" conaffinity="0" contype="0" group="1" name="table_leg2_visual" material="table_legs_metal"/>
+      <geom pos="-0.4 -0.85 -0.4 " size="0.025 0.4" type="cylinder" conaffinity="0" contype="0" group="1" name="table_leg3_visual" material="table_legs_metal"/>
+      <geom pos="-0.4  0.85 -0.4 " size="0.025 0.4" type="cylinder" conaffinity="0" contype="0" group="1" name="table_leg4_visual" material="table_legs_metal"/>
+      
+      <!-- Hook wall (visual only) -->
+      <body name="hook">
+        <geom pos="0 -0.6 0.2" size="0.03 0.01 0.2" type="box" conaffinity="0" contype="0" group="1" name="bar_with_two_hooks_wall" material="floorplane"/>
+        <!-- <geom pos="0 -0.55 0.35" euler="0 0 -1.5707963" mesh="bar_with_two_hooks_mesh" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" friction="0.95 0.3 0.1" material="bar_with_two_hooks" group="1" condim="4"/> -->
+        <geom pos="0 -0.55 0.35" euler="0 0 -1.5707963" contype="0" conaffinity="0" mesh="bar_with_two_hooks_mesh" type="mesh" material="bar_with_two_hooks" group="1"/>
+        <geom pos="0 -0.55 0.35" euler="0 0 -1.5707963" mesh="bar_with_two_hooks_mesh000" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 -0.55 0.35" euler="0 0 -1.5707963" mesh="bar_with_two_hooks_mesh001" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 -0.55 0.35" euler="0 0 -1.5707963" mesh="bar_with_two_hooks_mesh002" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 -0.55 0.35" euler="0 0 -1.5707963" mesh="bar_with_two_hooks_mesh003" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 -0.55 0.35" euler="0 0 -1.5707963" mesh="bar_with_two_hooks_mesh004" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 -0.55 0.35" euler="0 0 -1.5707963" mesh="bar_with_two_hooks_mesh005" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 -0.55 0.35" euler="0 0 -1.5707963" mesh="bar_with_two_hooks_mesh006" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 -0.55 0.35" euler="0 0 -1.5707963" mesh="bar_with_two_hooks_mesh007" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 -0.55 0.35" euler="0 0 -1.5707963" mesh="bar_with_two_hooks_mesh008" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 -0.55 0.35" euler="0 0 -1.5707963" mesh="bar_with_two_hooks_mesh009" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 -0.55 0.35" euler="0 0 -1.5707963" mesh="bar_with_two_hooks_mesh010" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 -0.55 0.35" euler="0 0 -1.5707963" mesh="bar_with_two_hooks_mesh011" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 -0.55 0.35" euler="0 0 -1.5707963" mesh="bar_with_two_hooks_mesh012" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 -0.55 0.35" euler="0 0 -1.5707963" mesh="bar_with_two_hooks_mesh013" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 -0.55 0.35" euler="0 0 -1.5707963" mesh="bar_with_two_hooks_mesh014" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 -0.55 0.35" euler="0 0 -1.5707963" mesh="bar_with_two_hooks_mesh015" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 -0.55 0.35" euler="0 0 -1.5707963" mesh="bar_with_two_hooks_mesh016" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 -0.55 0.35" euler="0 0 -1.5707963" mesh="bar_with_two_hooks_mesh017" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 -0.55 0.35" euler="0 0 -1.5707963" mesh="bar_with_two_hooks_mesh018" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 -0.55 0.35" euler="0 0 -1.5707963" mesh="bar_with_two_hooks_mesh019" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 -0.55 0.35" euler="0 0 -1.5707963" mesh="bar_with_two_hooks_mesh020" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 -0.55 0.35" euler="0 0 -1.5707963" mesh="bar_with_two_hooks_mesh021" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 -0.55 0.35" euler="0 0 -1.5707963" mesh="bar_with_two_hooks_mesh022" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 -0.55 0.35" euler="0 0 -1.5707963" mesh="bar_with_two_hooks_mesh023" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 -0.55 0.35" euler="0 0 -1.5707963" mesh="bar_with_two_hooks_mesh024" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 -0.55 0.35" euler="0 0 -1.5707963" mesh="bar_with_two_hooks_mesh025" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 -0.55 0.35" euler="0 0 -1.5707963" mesh="bar_with_two_hooks_mesh026" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 -0.55 0.35" euler="0 0 -1.5707963" mesh="bar_with_two_hooks_mesh027" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 -0.55 0.35" euler="0 0 -1.5707963" mesh="bar_with_two_hooks_mesh028" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 -0.55 0.35" euler="0 0 -1.5707963" mesh="bar_with_two_hooks_mesh029" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 -0.55 0.35" euler="0 0 -1.5707963" mesh="bar_with_two_hooks_mesh030" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 -0.55 0.35" euler="0 0 -1.5707963" mesh="bar_with_two_hooks_mesh031" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 -0.55 0.35" euler="0 0 -1.5707963" mesh="bar_with_two_hooks_mesh032" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 -0.55 0.35" euler="0 0 -1.5707963" mesh="bar_with_two_hooks_mesh033" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <!-- <geom pos="0 -0.55 0.35" euler="0 0 -1.5707963" mesh="bar_with_two_hooks_mesh034" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/> -->
+        <geom pos="0 -0.55 0.35" euler="0 0 -1.5707963" mesh="bar_with_two_hooks_mesh035" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 -0.55 0.35" euler="0 0 -1.5707963" mesh="bar_with_two_hooks_mesh036" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 -0.55 0.35" euler="0 0 -1.5707963" mesh="bar_with_two_hooks_mesh037" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 -0.55 0.35" euler="0 0 -1.5707963" mesh="bar_with_two_hooks_mesh038" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 -0.55 0.35" euler="0 0 -1.5707963" mesh="bar_with_two_hooks_mesh039" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 -0.55 0.35" euler="0 0 -1.5707963" mesh="bar_with_two_hooks_mesh040" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 -0.55 0.35" euler="0 0 -1.5707963" mesh="bar_with_two_hooks_mesh041" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <!-- <geom pos="0 -0.55 0.35" euler="0 0 -1.5707963" mesh="bar_with_two_hooks_mesh042" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/> -->
+      </body>
+
+      <!-- Bar wall (visual only) -->
+      <body name="bar">
+        <geom pos="0 0.6 0.2" size="0.03 0.01 0.2" type="box" conaffinity="0" contype="0" group="1" name="two_bars_wall" material="floorplane"/>
+        <!-- <geom pos="0 0.54 0.35" euler="0 1.5707963 1.5707963" mesh="two_bars_mesh" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" friction="0.95 0.3 0.1" material="two_bars" group="1" condim="4"/> -->
+        <geom pos="0 0.54 0.35" euler="0 1.5707963 1.5707963" contype="0" conaffinity="0" mesh="two_bars_mesh" type="mesh" material="two_bars" group="1"/>
+        <geom pos="0 0.54 0.35" euler="0 1.5707963 1.5707963" mesh="two_bars_mesh000" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0.54 0.35" euler="0 1.5707963 1.5707963" mesh="two_bars_mesh001" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0.54 0.35" euler="0 1.5707963 1.5707963" mesh="two_bars_mesh002" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0.54 0.35" euler="0 1.5707963 1.5707963" mesh="two_bars_mesh003" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0.54 0.35" euler="0 1.5707963 1.5707963" mesh="two_bars_mesh004" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0.54 0.35" euler="0 1.5707963 1.5707963" mesh="two_bars_mesh005" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0.54 0.35" euler="0 1.5707963 1.5707963" mesh="two_bars_mesh006" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0.54 0.35" euler="0 1.5707963 1.5707963" mesh="two_bars_mesh007" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0.54 0.35" euler="0 1.5707963 1.5707963" mesh="two_bars_mesh008" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0.54 0.35" euler="0 1.5707963 1.5707963" mesh="two_bars_mesh009" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0.54 0.35" euler="0 1.5707963 1.5707963" mesh="two_bars_mesh010" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0.54 0.35" euler="0 1.5707963 1.5707963" mesh="two_bars_mesh011" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0.54 0.35" euler="0 1.5707963 1.5707963" mesh="two_bars_mesh012" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0.54 0.35" euler="0 1.5707963 1.5707963" mesh="two_bars_mesh013" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0.54 0.35" euler="0 1.5707963 1.5707963" mesh="two_bars_mesh014" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0.54 0.35" euler="0 1.5707963 1.5707963" mesh="two_bars_mesh015" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0.54 0.35" euler="0 1.5707963 1.5707963" mesh="two_bars_mesh016" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0.54 0.35" euler="0 1.5707963 1.5707963" mesh="two_bars_mesh017" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0.54 0.35" euler="0 1.5707963 1.5707963" mesh="two_bars_mesh018" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0.54 0.35" euler="0 1.5707963 1.5707963" mesh="two_bars_mesh019" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0.54 0.35" euler="0 1.5707963 1.5707963" mesh="two_bars_mesh020" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0.54 0.35" euler="0 1.5707963 1.5707963" mesh="two_bars_mesh021" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0.54 0.35" euler="0 1.5707963 1.5707963" mesh="two_bars_mesh022" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0.54 0.35" euler="0 1.5707963 1.5707963" mesh="two_bars_mesh023" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0.54 0.35" euler="0 1.5707963 1.5707963" mesh="two_bars_mesh024" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0.54 0.35" euler="0 1.5707963 1.5707963" mesh="two_bars_mesh025" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0.54 0.35" euler="0 1.5707963 1.5707963" mesh="two_bars_mesh026" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0.54 0.35" euler="0 1.5707963 1.5707963" mesh="two_bars_mesh027" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0.54 0.35" euler="0 1.5707963 1.5707963" mesh="two_bars_mesh028" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0.54 0.35" euler="0 1.5707963 1.5707963" mesh="two_bars_mesh029" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0.54 0.35" euler="0 1.5707963 1.5707963" mesh="two_bars_mesh030" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0.54 0.35" euler="0 1.5707963 1.5707963" mesh="two_bars_mesh031" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0.54 0.35" euler="0 1.5707963 1.5707963" mesh="two_bars_mesh032" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0.54 0.35" euler="0 1.5707963 1.5707963" mesh="two_bars_mesh033" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0.54 0.35" euler="0 1.5707963 1.5707963" mesh="two_bars_mesh034" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0.54 0.35" euler="0 1.5707963 1.5707963" mesh="two_bars_mesh035" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0.54 0.35" euler="0 1.5707963 1.5707963" mesh="two_bars_mesh036" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0.54 0.35" euler="0 1.5707963 1.5707963" mesh="two_bars_mesh037" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0.54 0.35" euler="0 1.5707963 1.5707963" mesh="two_bars_mesh038" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0.54 0.35" euler="0 1.5707963 1.5707963" mesh="two_bars_mesh039" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0.54 0.35" euler="0 1.5707963 1.5707963" mesh="two_bars_mesh040" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0.54 0.35" euler="0 1.5707963 1.5707963" mesh="two_bars_mesh041" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0.54 0.35" euler="0 1.5707963 1.5707963" mesh="two_bars_mesh042" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0.54 0.35" euler="0 1.5707963 1.5707963" mesh="two_bars_mesh043" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0.54 0.35" euler="0 1.5707963 1.5707963" mesh="two_bars_mesh044" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0.54 0.35" euler="0 1.5707963 1.5707963" mesh="two_bars_mesh045" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0.54 0.35" euler="0 1.5707963 1.5707963" mesh="two_bars_mesh046" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0.54 0.35" euler="0 1.5707963 1.5707963" mesh="two_bars_mesh047" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0.54 0.35" euler="0 1.5707963 1.5707963" mesh="two_bars_mesh048" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0.54 0.35" euler="0 1.5707963 1.5707963" mesh="two_bars_mesh049" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <!-- <geom pos="0 0.54 0.35" euler="0 1.5707963 1.5707963" mesh="two_bars_mesh050" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/> -->
+        <geom pos="0 0.54 0.35" euler="0 1.5707963 1.5707963" mesh="two_bars_mesh051" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0.54 0.35" euler="0 1.5707963 1.5707963" mesh="two_bars_mesh052" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0.54 0.35" euler="0 1.5707963 1.5707963" mesh="two_bars_mesh053" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0.54 0.35" euler="0 1.5707963 1.5707963" mesh="two_bars_mesh054" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0.54 0.35" euler="0 1.5707963 1.5707963" mesh="two_bars_mesh055" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0.54 0.35" euler="0 1.5707963 1.5707963" mesh="two_bars_mesh056" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0.54 0.35" euler="0 1.5707963 1.5707963" mesh="two_bars_mesh057" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0.54 0.35" euler="0 1.5707963 1.5707963" mesh="two_bars_mesh058" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0.54 0.35" euler="0 1.5707963 1.5707963" mesh="two_bars_mesh059" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0.54 0.35" euler="0 1.5707963 1.5707963" mesh="two_bars_mesh060" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0.54 0.35" euler="0 1.5707963 1.5707963" mesh="two_bars_mesh061" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <!-- <geom pos="0 0.54 0.35" euler="0 1.5707963 1.5707963" mesh="two_bars_mesh062" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/> -->
+        <!-- <geom pos="0 0.54 0.35" euler="0 1.5707963 1.5707963" mesh="two_bars_mesh063" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/> -->
+      </body>
+
+
+    </body>
+
+    <!-- Cam pose (visual only) -->
+    <light name="light1" diffuse=".8 .8 .8" dir="0 -.15 -1" directional="false" pos="1 1 4.0" specular="0.3 0.3 0.3" castshadow="false"/>
+    <light name="light2" diffuse=".8 .8 .8" dir="0 -.15 -1" directional="false" pos="-3. -3. 4.0" specular="0.3 0.3 0.3" castshadow="false"/>
+    <!-- front view -->
+    <camera mode="fixed" name="frontview" pos="1.6 0 1.45" quat="0.56 0.43 0.43 0.56" />
+    <!-- bird view -->
+    <camera mode="fixed" name="birdview" pos="-0.2 0 3.0" quat="0.7071 0 0 0.7071"/>
+    <!-- agent view -->
+    <camera mode="fixed" name="agentview" pos="1.5 0 1.8" quat="0.579228 0.4055798 0.4055798 0.579228"/>
+    <!-- side view -->
+    <camera mode="fixed" name="sideview" pos="-0.05651774593317116 1.2761224129427358 1.4879572214102434" quat="0.009905065491771751 0.006877963156909582 0.5912228352893879 0.806418094001364" />
+    
+    <!-- cam1 : near right bottom view -->
+    <camera mode="targetbody" target="table" name="cam1" pos="0.315 0.735 1.0" />
+    <!-- cam2 : near left bottom view -->
+    <camera mode="targetbody" target="table" name="cam2" pos="0.315 -0.735 1.0"/>
+    <!-- cam3 : near right top middle -->
+    <camera mode="targetbody" target="table" name="cam3" pos="0.315 0.735 1.5"/>
+    <!-- cam4 : near left top middle -->
+    <camera mode="targetbody" target="table" name="cam4" pos="0.315 -0.735 1.5"/>
+    <!-- cam5 : near right top middle -->
+    <camera mode="targetbody" target="table" name="cam5" pos="-0.315 -0.735 1.5"/>
+    <!-- cam6 : far right top middle -->
+    <camera mode="targetbody" target="table" name="cam6" pos="-0.315 0.735 1.5"/>
+    <!-- cam7 : middle right top view -->
+    <camera mode="targetbody" target="table" name="cam7" pos="0 0.4 1.65"/>
+    <!-- cam8 : middle left top view -->
+    <camera mode="targetbody" target="table" name="cam8" pos="0 -0.4 1.65"/>
+
+  </worldbody>
+</mujoco>

@@ -5,3 +5,4 @@ from .bins_arena import BinsArena
 from .empty_arena import EmptyArena
 from .wipe_arena import WipeArena
 from .ycb_arena import YCBArena
+from .kitchen_arena import KitchenArena

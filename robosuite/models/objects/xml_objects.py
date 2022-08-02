@@ -353,3 +353,13 @@ class SpatulaObject(MujocoXMLObject):
                          joints=[dict(type="free", damping="0.0005")],
                          obj_type="all", 
                          duplicate_collision_geoms=True)
+
+class MyObject(MujocoXMLObject):
+    def __init__(self, xml, name):
+        super().__init__(
+            xml_path_completion(xml),
+            name=name,
+            joints=[dict(type="free", damping="0.0005")],
+            obj_type="all",
+            duplicate_collision_geoms=True,
+        )

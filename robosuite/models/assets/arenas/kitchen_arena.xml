@@ -1,0 +1,204 @@
+<mujoco model="kitchen_arena">
+  <asset>
+    <texture builtin="gradient" height="256" rgb1=".9 .9 1." rgb2=".2 .3 .4" type="skybox" width="256"/>
+    <texture file="../textures/wood-tiles.png" type="2d" name="texplane"/>
+    <material name="floorplane" reflectance="0.01" shininess="0.0" specular="0.0" texrepeat="2 2" texture="texplane" texuniform="true"/>
+    <!-- ceramic table texture and material-->
+    <texture file="../textures/ceramic.png" type="cube" name="tex-ceramic"/>
+    <material name="table_ceramic" reflectance="0.0" shininess="0.0" specular="0.2" texrepeat="1 1" texture="tex-ceramic" />
+    <!-- steel legs -->
+    <texture file="../textures/steel-brushed.png" type="cube" name="tex-steel-brushed"/>
+    <material name="table_legs_metal" reflectance="0.8" shininess="0.8" texrepeat="1 1" texture="tex-steel-brushed" />
+    <!-- plaster walls -->
+    <texture file="../textures/cream-plaster.png" type="2d" name="tex-cream-plaster"/>
+    <material name="walls_mat" reflectance="0.0" shininess="0.1" specular="0.1" texrepeat="3 3" texture="tex-cream-plaster" texuniform="true" />
+    <!-- added table texture and material for domain randomization -->
+    <texture  name="textable" builtin="flat" height="512" width="512" rgb1="0.5 0.5 0.5" rgb2="0.5 0.5 0.5"/>
+    <material name="table_mat" texture="textable" />
+
+    <mesh file="../objects/refrigirator/model.msh" name="refrigirator_mesh" scale="8 8 8"/>
+    <texture file="../objects/refrigirator/texture.png" name="tex-refrigirator" type="2d"/>
+    <material name="refrigirator" reflectance="0.7" texrepeat="5 5" texture="tex-refrigirator" texuniform="true"/>
+
+    <mesh file="../objects/kitchen/textured.msh" name="kitchen_mesh" scale="9 9 9"/>
+    <mesh file="../objects/kitchen/composite/object000.msh" name="kitchen_mesh000" scale="9 9 9"/>
+    <mesh file="../objects/kitchen/composite/object001.msh" name="kitchen_mesh001" scale="9 9 9"/>
+    <mesh file="../objects/kitchen/composite/object002.msh" name="kitchen_mesh002" scale="9 9 9"/>
+    <mesh file="../objects/kitchen/composite/object003.msh" name="kitchen_mesh003" scale="9 9 9"/>
+    <mesh file="../objects/kitchen/composite/object004.msh" name="kitchen_mesh004" scale="9 9 9"/>
+    <mesh file="../objects/kitchen/composite/object005.msh" name="kitchen_mesh005" scale="9 9 9"/>
+    <mesh file="../objects/kitchen/composite/object006.msh" name="kitchen_mesh006" scale="9 9 9"/>
+    <mesh file="../objects/kitchen/composite/object007.msh" name="kitchen_mesh007" scale="9 9 9"/>
+    <mesh file="../objects/kitchen/composite/object008.msh" name="kitchen_mesh008" scale="9 9 9"/>
+    <mesh file="../objects/kitchen/composite/object009.msh" name="kitchen_mesh009" scale="9 9 9"/>
+    <mesh file="../objects/kitchen/composite/object010.msh" name="kitchen_mesh010" scale="9 9 9"/>
+    <mesh file="../objects/kitchen/composite/object011.msh" name="kitchen_mesh011" scale="9 9 9"/>
+    <mesh file="../objects/kitchen/composite/object012.msh" name="kitchen_mesh012" scale="9 9 9"/>
+    <mesh file="../objects/kitchen/composite/object013.msh" name="kitchen_mesh013" scale="9 9 9"/>
+    <mesh file="../objects/kitchen/composite/object014.msh" name="kitchen_mesh014" scale="9 9 9"/>
+    <mesh file="../objects/kitchen/composite/object015.msh" name="kitchen_mesh015" scale="9 9 9"/>
+    <mesh file="../objects/kitchen/composite/object016.msh" name="kitchen_mesh016" scale="9 9 9"/>
+    <mesh file="../objects/kitchen/composite/object017.msh" name="kitchen_mesh017" scale="9 9 9"/>
+    <mesh file="../objects/kitchen/composite/object018.msh" name="kitchen_mesh018" scale="9 9 9"/>
+    <mesh file="../objects/kitchen/composite/object019.msh" name="kitchen_mesh019" scale="9 9 9"/>
+    <mesh file="../objects/kitchen/composite/object020.msh" name="kitchen_mesh020" scale="9 9 9"/>
+    <mesh file="../objects/kitchen/composite/object021.msh" name="kitchen_mesh021" scale="9 9 9"/>
+    <mesh file="../objects/kitchen/composite/object022.msh" name="kitchen_mesh022" scale="9 9 9"/>
+    <mesh file="../objects/kitchen/composite/object023.msh" name="kitchen_mesh023" scale="9 9 9"/>
+    <mesh file="../objects/kitchen/composite/object024.msh" name="kitchen_mesh024" scale="9 9 9"/>
+    <mesh file="../objects/kitchen/composite/object025.msh" name="kitchen_mesh025" scale="9 9 9"/>
+    <mesh file="../objects/kitchen/composite/object026.msh" name="kitchen_mesh026" scale="9 9 9"/>
+    <mesh file="../objects/kitchen/composite/object027.msh" name="kitchen_mesh027" scale="9 9 9"/>
+    <mesh file="../objects/kitchen/composite/object028.msh" name="kitchen_mesh028" scale="9 9 9"/>
+    <mesh file="../objects/kitchen/composite/object029.msh" name="kitchen_mesh029" scale="9 9 9"/>
+    <mesh file="../objects/kitchen/composite/object030.msh" name="kitchen_mesh030" scale="9 9 9"/>
+    <mesh file="../objects/kitchen/composite/object031.msh" name="kitchen_mesh031" scale="9 9 9"/>
+    <mesh file="../objects/kitchen/composite/object032.msh" name="kitchen_mesh032" scale="9 9 9"/>
+    <mesh file="../objects/kitchen/composite/object033.msh" name="kitchen_mesh033" scale="9 9 9"/>
+    <mesh file="../objects/kitchen/composite/object034.msh" name="kitchen_mesh034" scale="9 9 9"/>
+    <mesh file="../objects/kitchen/composite/object035.msh" name="kitchen_mesh035" scale="9 9 9"/>
+    <mesh file="../objects/kitchen/composite/object036.msh" name="kitchen_mesh036" scale="9 9 9"/>
+    <mesh file="../objects/kitchen/composite/object037.msh" name="kitchen_mesh037" scale="9 9 9"/>
+    <mesh file="../objects/kitchen/composite/object038.msh" name="kitchen_mesh038" scale="9 9 9"/>
+    <mesh file="../objects/kitchen/composite/object039.msh" name="kitchen_mesh039" scale="9 9 9"/>
+    <mesh file="../objects/kitchen/composite/object040.msh" name="kitchen_mesh040" scale="9 9 9"/>
+    <mesh file="../objects/kitchen/composite/object041.msh" name="kitchen_mesh041" scale="9 9 9"/>
+    <mesh file="../objects/kitchen/composite/object042.msh" name="kitchen_mesh042" scale="9 9 9"/>
+    <mesh file="../objects/kitchen/composite/object043.msh" name="kitchen_mesh043" scale="9 9 9"/>
+    <mesh file="../objects/kitchen/composite/object044.msh" name="kitchen_mesh044" scale="9 9 9"/>
+    <mesh file="../objects/kitchen/composite/object045.msh" name="kitchen_mesh045" scale="9 9 9"/>
+    <mesh file="../objects/kitchen/composite/object046.msh" name="kitchen_mesh046" scale="9 9 9"/>
+    <mesh file="../objects/kitchen/composite/object047.msh" name="kitchen_mesh047" scale="9 9 9"/>
+    <mesh file="../objects/kitchen/composite/object048.msh" name="kitchen_mesh048" scale="9 9 9"/>
+    <mesh file="../objects/kitchen/composite/object049.msh" name="kitchen_mesh049" scale="9 9 9"/>
+    <mesh file="../objects/kitchen/composite/object050.msh" name="kitchen_mesh050" scale="9 9 9"/>
+    <mesh file="../objects/kitchen/composite/object051.msh" name="kitchen_mesh051" scale="9 9 9"/>
+    <mesh file="../objects/kitchen/composite/object052.msh" name="kitchen_mesh052" scale="9 9 9"/>
+    <mesh file="../objects/kitchen/composite/object053.msh" name="kitchen_mesh053" scale="9 9 9"/>
+    <mesh file="../objects/kitchen/composite/object054.msh" name="kitchen_mesh054" scale="9 9 9"/>
+    <mesh file="../objects/kitchen/composite/object055.msh" name="kitchen_mesh055" scale="9 9 9"/>
+    <mesh file="../objects/kitchen/composite/object056.msh" name="kitchen_mesh056" scale="9 9 9"/>
+    <mesh file="../objects/kitchen/composite/object057.msh" name="kitchen_mesh057" scale="9 9 9"/>
+    <mesh file="../objects/kitchen/composite/object058.msh" name="kitchen_mesh058" scale="9 9 9"/>
+    <mesh file="../objects/kitchen/composite/object059.msh" name="kitchen_mesh059" scale="9 9 9"/>
+    <mesh file="../objects/kitchen/composite/object060.msh" name="kitchen_mesh060" scale="9 9 9"/>
+    <mesh file="../objects/kitchen/composite/object061.msh" name="kitchen_mesh061" scale="9 9 9"/>
+    <mesh file="../objects/kitchen/composite/object062.msh" name="kitchen_mesh062" scale="9 9 9"/>
+    <mesh file="../objects/kitchen/composite/object063.msh" name="kitchen_mesh063" scale="9 9 9"/>
+    <texture file="../objects/kitchen/texture.png" name="tex-kitchen" type="2d"/>
+    <material name="kitchen" reflectance="0.7" texrepeat="5 5" texture="tex-kitchen" texuniform="true"/>
+    <material name="none" rgba="1 1 1 0"/>
+  </asset>
+  <worldbody>
+    <!-- Floor -->
+    <geom condim="3" material="floorplane" name="floor" pos="0 0 0" size="5 5 .125" type="plane"/>
+    <!-- Walls (visual only) -->
+    <!-- <geom pos="-1.25 2.25 1.5" quat="0.6532815 0.6532815 0.2705981 0.2705981" size="1.06 1.5 0.01" type="box" conaffinity="0" contype="0" group="1" name="wall_leftcorner_visual" material="walls_mat"/>
+    <geom pos="-1.25 -2.25 1.5" quat="0.6532815 0.6532815 -0.2705981 -0.2705981" size="1.06 1.5 0.01" type="box" conaffinity="0" contype="0" group="1" name="wall_rightcorner_visual" material="walls_mat"/>
+    <geom pos="1.25 3 1.5" quat="0.7071 0.7071 0 0" size="1.75 1.5 0.01" type="box" conaffinity="0" contype="0" group="1" name="wall_left_visual" material="walls_mat"/>
+    <geom pos="1.25 -3 1.5" quat="0.7071 -0.7071 0 0" size="1.75 1.5 0.01" type="box" conaffinity="0" contype="0" group="1" name="wall_right_visual" material="walls_mat"/>
+    <geom pos="-2 0 1.5" quat="0.5 0.5 0.5 0.5" size="1.5 1.5 0.01" type="box" conaffinity="0" contype="0" group="1" name="wall_rear_visual" material="walls_mat"/>
+    <geom pos="3 0 1.5" quat="0.5 0.5 -0.5 -0.5" size="3 1.5 0.01" type="box" conaffinity="0" contype="0" group="1" name="wall_front_visual" material="walls_mat"/> -->
+    <!-- Table body -->
+    <body name="table" pos="0 0 0.4">
+      <geom pos="0 0 0" size="0.4 0.4 0.4" type="box" group="0" name="table_collision" friction="1 0.005 0.0001"/>
+      <geom pos="0 0 0" size="0.4 0.4 0.4" type="box" conaffinity="0" contype="0" group="1" name="table_visual" material="table_ceramic"/>
+      <site pos="0 0 0.4" name="table_top" size="0.001 0.001 0.001" rgba="0 0 0 0"/>
+      <!-- Legs (visual only) -->
+      <geom pos="0 0 0" size="0.05 0.1" type="cylinder" conaffinity="0" contype="0" group="1" name="table_leg1_visual" material="table_legs_metal"/>
+      <geom pos="0 0 0" size="0.05 0.1" type="cylinder" conaffinity="0" contype="0" group="1" name="table_leg2_visual" material="table_legs_metal"/>
+      <geom pos="0 0 0" size="0.05 0.1" type="cylinder" conaffinity="0" contype="0" group="1" name="table_leg3_visual" material="table_legs_metal"/>
+      <geom pos="0 0 0" size="0.05 0.1" type="cylinder" conaffinity="0" contype="0" group="1" name="table_leg4_visual" material="table_legs_metal"/>
+    </body>
+
+    <body name="refrigirator">
+      <geom pos="-1.15 1.35 0" contype="0" conaffinity="0" group="1" mesh="refrigirator_mesh" type="mesh" material="refrigirator"/>
+      <geom pos="-1.15 1.35 0" mesh="refrigirator_mesh" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+    </body>
+
+    <body name="kitchen">
+      <body>
+        <geom pos="0 0.8 0" contype="0" conaffinity="0" group="1" mesh="kitchen_mesh" type="mesh" material="kitchen"/>
+        <geom pos="0 0.8 0" mesh="kitchen_mesh000" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0.8 0" mesh="kitchen_mesh001" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0.8 0" mesh="kitchen_mesh002" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0.8 0" mesh="kitchen_mesh003" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0.8 0" mesh="kitchen_mesh004" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0.8 0" mesh="kitchen_mesh005" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0.8 0" mesh="kitchen_mesh006" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0.8 0" mesh="kitchen_mesh007" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0.8 0" mesh="kitchen_mesh008" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0.8 0" mesh="kitchen_mesh009" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0.8 0" mesh="kitchen_mesh010" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0.8 0" mesh="kitchen_mesh011" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0.8 0" mesh="kitchen_mesh012" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0.8 0" mesh="kitchen_mesh013" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0.8 0" mesh="kitchen_mesh014" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0.8 0" mesh="kitchen_mesh015" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0.8 0" mesh="kitchen_mesh016" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0.8 0" mesh="kitchen_mesh017" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0.8 0" mesh="kitchen_mesh018" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0.8 0" mesh="kitchen_mesh019" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0.8 0" mesh="kitchen_mesh020" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0.8 0" mesh="kitchen_mesh021" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0.8 0" mesh="kitchen_mesh022" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0.8 0" mesh="kitchen_mesh023" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0.8 0" mesh="kitchen_mesh024" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0.8 0" mesh="kitchen_mesh025" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0.8 0" mesh="kitchen_mesh026" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0.8 0" mesh="kitchen_mesh027" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0.8 0" mesh="kitchen_mesh028" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0.8 0" mesh="kitchen_mesh029" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0.8 0" mesh="kitchen_mesh030" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0.8 0" mesh="kitchen_mesh031" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0.8 0" mesh="kitchen_mesh032" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0.8 0" mesh="kitchen_mesh033" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0.8 0" mesh="kitchen_mesh034" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0.8 0" mesh="kitchen_mesh035" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0.8 0" mesh="kitchen_mesh036" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0.8 0" mesh="kitchen_mesh037" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0.8 0" mesh="kitchen_mesh038" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0.8 0" mesh="kitchen_mesh039" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0.8 0" mesh="kitchen_mesh040" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0.8 0" mesh="kitchen_mesh041" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0.8 0" mesh="kitchen_mesh042" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0.8 0" mesh="kitchen_mesh043" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0.8 0" mesh="kitchen_mesh044" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0.8 0" mesh="kitchen_mesh045" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0.8 0" mesh="kitchen_mesh046" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0.8 0" mesh="kitchen_mesh047" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0.8 0" mesh="kitchen_mesh048" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0.8 0" mesh="kitchen_mesh049" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0.8 0" mesh="kitchen_mesh050" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0.8 0" mesh="kitchen_mesh051" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0.8 0" mesh="kitchen_mesh052" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0.8 0" mesh="kitchen_mesh053" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0.8 0" mesh="kitchen_mesh054" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0.8 0" mesh="kitchen_mesh055" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0.8 0" mesh="kitchen_mesh056" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0.8 0" mesh="kitchen_mesh057" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0.8 0" mesh="kitchen_mesh058" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0.8 0" mesh="kitchen_mesh059" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0.8 0" mesh="kitchen_mesh060" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0.8 0" mesh="kitchen_mesh061" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0.8 0" mesh="kitchen_mesh062" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+        <geom pos="0 0.8 0" mesh="kitchen_mesh063" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="50" material="none" friction="0.95 0.3 0.1" group="0" condim="4"/>
+      </body>
+      <site rgba="0 0 0 0" size="0.005" pos="0 0 -0.045" name="bottom_site"/>
+      <site rgba="0 0 0 0" size="0.005" pos="0 0 0.03" name="top_site"/>
+      <site rgba="0 0 0 0" size="0.005" pos="0.03 0.03 0" name="horizontal_radius_site"/>
+    </body>
+    <light name="light1" diffuse=".8 .8 .8" dir="0 -.15 -1" directional="false" pos="1 1 4.0" specular="0.3 0.3 0.3" castshadow="false"/>
+    <light name="light2" diffuse=".8 .8 .8" dir="0 -.15 -1" directional="false" pos="-3. -3. 4.0" specular="0.3 0.3 0.3" castshadow="false"/>
+    <!-- front view -->
+    <camera mode="fixed" name="frontview" pos="1.6 0 1.45" quat="0.56 0.43 0.43 0.56"/>
+    <!-- bird view -->
+    <camera mode="fixed" name="birdview" pos="-0.2 0 3.0" quat="0.7071 0 0 0.7071"/>
+    <!-- agent view -->
+    <camera mode="fixed" name="agentview" pos="0.5 0 1.35" quat="0.653 0.271 0.271 0.653"/>
+    <!-- side view -->
+    <camera mode="fixed" name="sideview" pos="-0.05651774593317116 1.2761224129427358 1.4879572214102434" quat="0.009905065491771751 0.006877963156909582 0.5912228352893879 0.806418094001364" />
+
+    <camera mode="targetbody" target="table" name="cam" pos="1.5 -1.2 1.5" />
+  </worldbody>
+</mujoco>
